@@ -12,21 +12,15 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# inherit from common trlte
--include device/samsung/trlte-common/BoardConfigCommon.mk
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-TARGET_OTA_ASSERT_DEVICE := trlte,trltexx,SM-N910F
+# Inherit from trlte device
+$(call inherit-product, device/samsung/trlte/device.mk)
 
-# Kernel
-TARGET_KERNEL_VARIANT_CONFIG := apq8084_sec_trlte_eur_defconfig
-
-# Init
-TARGET_INIT_VENDOR_LIB := libinit_msm
-TARGET_LIBINIT_DEFINES_FILE := device/samsung/trlte/init/init_trlte.c
-TARGET_UNIFIED_DEVICE := true
-
-# Radio
-BOARD_RIL_CLASS := ../../../device/samsung/trlte/ril
-
-# inherit from the proprietary version
--include vendor/samsung/trlte/BoardConfigVendor.mk
+# Set those variables here to overwrite the inherited values.
+PRODUCT_NAME := full_trltexx
+PRODUCT_DEVICE := trlte
+PRODUCT_BRAND := samsung
+PRODUCT_MANUFACTURER := samsung
+PRODUCT_MODEL := trlte
