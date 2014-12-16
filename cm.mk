@@ -23,4 +23,4 @@ $(call inherit-product, vendor/cm/config/nfc_enhanced.mk)
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 PRODUCT_DEVICE := trlte
-PRODUCT_NAME := cm_trltexx
+PRODUCT_NAME := cm_trlte
