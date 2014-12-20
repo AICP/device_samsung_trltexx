@@ -31,7 +31,7 @@ BOARD_RIL_CLASS := ../../../device/samsung/trltexx/ril
 
 # Modem
 MHI_MODULE:
-	make -C hardware/qcom/mhi/ -Wno-error KERNEL_DIR=$(KERNEL_OUT) KLIB=$(KERNEL_OUT) KLIB_BUILD=$(KERNEL_OUT) ARCH=$(TARGET_ARCH) $(ARM_CROSS_COMPILE)
+	make -C hardware/qcom/mhi/ CFLAGS_MODULE=-fno-pic KERNEL_DIR=$(KERNEL_OUT) KLIB=$(KERNEL_OUT) KLIB_BUILD=$(KERNEL_OUT) ARCH=$(TARGET_ARCH) $(ARM_CROSS_COMPILE)
 	mv hardware/qcom/mhi/mhi.ko $(KERNEL_MODULES_OUT)
 TARGET_KERNEL_MODULES := MHI_MODULE
 
