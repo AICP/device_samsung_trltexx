@@ -54,21 +54,21 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 
     property_get("ro.bootloader", bootloader);
 
-/*    if (strstr(bootloader, "N910W8")) { */
+    if (strstr(bootloader, "N910W8")) {
         /* trltecan These values are taken from TMO and edited for the 910W8 FIXME */
-/*        property_set("ro.build.fingerprint", "samsung/trltevl/trltecan:4.4.4/KTU84P/N910W8UVU1ANIH:user/release-keys");
+        property_set("ro.build.fingerprint", "samsung/trltevl/trltecan:4.4.4/KTU84P/N910W8UVU1ANIH:user/release-keys");
         property_set("ro.build.description", "trltevl-user 5.0.1 LRX22C N910W8UVU1ANIH release-keys");
         property_set("ro.product.model", "SM-N910W8");
         property_set("ro.product.device", "trltecan");
         gsm_properties();
-    } else { */
-        /* trlte */
+    } else {
+        /* trltexx */
         property_set("ro.build.fingerprint", "samsung/trltexx/trlte:4.4.4/KTU84P/N910FXXU1ANK4:user/release-keys");
-        property_set("ro.build.description", "trltexx-user 4.4.4 KTU84P N910FXXU1ANK4 release-keys");
+        property_set("ro.build.description", "trltexx-user 5.0.1 LRX22C N910FXXU1ANK4 release-keys");
         property_set("ro.product.model", "SM-N910F");
-        property_set("ro.product.device", "trlte");
+        property_set("ro.product.device", "trltexx");
         gsm_properties();
-/*    } */
+    }
 
     property_get("ro.product.device", device);
     strlcpy(devicename, device, sizeof(devicename));
@@ -77,6 +77,6 @@ void init_msm_properties(unsigned long msm_id, unsigned long msm_ver, char *boar
 
 void gsm_properties()
 {
-    property_set("persist.radio.jbims", "1");
-    property_set("persist.radio.add_power_save", "1"); 
+//   property_set("telephony.lteOnGsmDevice", "1");
+//    property_set("ro.telephony.default_network", "9");
 }
