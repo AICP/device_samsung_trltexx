@@ -64,4 +64,3 @@ lib/libsecril-client.so
 vendor/lib/libril-qcril-hook-oem.so
 vendor/lib/libconfigdb.so
 vendor/lib/libxml.so
-vendor/lib/libtime_genoff.so
