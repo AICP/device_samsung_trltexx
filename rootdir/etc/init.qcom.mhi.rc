@@ -1,0 +1,7 @@
+on property:ro.baseband=mdm2
+	start mdm_helper
+
+# MHI
+on property:sys.qseecomd.enable=true
+    insmod /system/lib/modules/mhi.ko
+    write /dev/kmsg "insmod mhi.ko"

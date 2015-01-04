@@ -22,5 +22,9 @@ $(call inherit-product-if-exists, vendor/samsung/trltexx/trltexx-vendor.mk)
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += device/samsung/trltexx/overlay
 
+# Ramdisk
+PRODUCT_PACKAGES += \
+    init.qcom.mhi.rc
+
 # common trlte
 $(call inherit-product, device/samsung/trlte-common/trlte.mk)
