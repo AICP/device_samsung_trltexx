@@ -36,3 +36,7 @@ TARGET_KERNEL_MODULES := MHI_MODULE
 
 # inherit from the proprietary version
 -include vendor/samsung/trltexx/BoardConfigVendor.mk
+
+# overwrite partition sizes
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3774873600
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 27040657408
